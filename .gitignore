@@ -1,0 +1,4 @@
+.vscode
+build/
+txt_input.txt
+txt_output.txt
