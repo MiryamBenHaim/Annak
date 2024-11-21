@@ -5,6 +5,10 @@ project(AnnakGame)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# adding libraries
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
 # make the library with the src files
 file(GLOB SOURCES "src/*.cpp" "resources/code/*.cpp")
 

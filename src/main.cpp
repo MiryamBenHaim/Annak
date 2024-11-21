@@ -122,22 +122,5 @@ int main()
 
 //-------------------------------------
 
-#pragma region MouseEvents
-
-    Point point[3] = { {-1, -1}, {-1, -1}, {-1, -1} };
-
-    //set the callback function for any mouse event
-    setMouseCallback("Board", CallBackFunc, point);
-
-    //show the image
-    imshow("Board", Images::img);
-
-    // Wait until user press some key
-    waitKey(0);
-
-#pragma endregion
-
-//-------------------------------------
-
     return 0;
 }
