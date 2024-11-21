@@ -22,6 +22,8 @@ public:
     std::shared_ptr<Place> place;
     Person* person;
     std::shared_ptr<Vehicle> vehicle;
+    int dist = -1;
+    Position parent;
 
     Square(Type type = _Tile, std::shared_ptr<Place> place = nullptr) : type(type), place(place), person(nullptr) { }
 

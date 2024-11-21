@@ -27,4 +27,16 @@
 
 void StartFunc(std::vector<std::shared_ptr<Command>> start);
 
+void resource_func(std::vector<std::string> args);
+
+void resources_func(std::vector<std::string> args);
+
+void people_func(std::vector<std::string> args);
+
+void build_func(std::vector<std::string> args, bool start);
+
+void manufacture_func(std::vector<std::string> args, bool start);
+
+void makeEmpty_func(std::vector<std::string> args);
+
 #endif // __START_FUNCTIONS__
