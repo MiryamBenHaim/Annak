@@ -1,5 +1,13 @@
-#include <iostream>
+#include <memory>
+#include <algorithm>
 #include <vector>
+#include <iostream>
+#include <sstream>
+#include <unordered_map>
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 
 #include "../resources/code/Input.h"
 
@@ -26,6 +34,9 @@
 #include "input_functions.h"
 #include "asserts_functions.h"
 
+#include "mouse_events.h"
+
+using namespace cv;
 using namespace std;
 
 
@@ -65,6 +76,14 @@ int main()
 
     World::addTiles(myTiles);
 
+    Images::generateBoardImage();
+
+    //Create a window
+    namedWindow("Board", 1);
+
+    imshow("Board", Images::img);
+    waitKey(3000);
+
 #pragma endregion
 
 //-------------------------------------
@@ -73,6 +92,9 @@ int main()
 
     StartFunc(in.start);
     World::printBoard();
+
+    imshow("Board", Images::img);
+    waitKey(1000);
 
 #pragma endregion
 
@@ -83,6 +105,10 @@ int main()
     Position* pos = new Position(0, 0);
     InputFunc(in.steps, pos);
 
+    
+    imshow("Board", Images::img);
+    waitKey(500);
+
 #pragma endregion
 
 //-------------------------------------
@@ -91,6 +117,23 @@ int main()
 
     AssertsFunc(in.asserts, *pos);
     cout << "-----------------------------------\n" << endl;
+
+#pragma endregion
+
+//-------------------------------------
+
+#pragma region MouseEvents
+
+    Point point[3] = { {-1, -1}, {-1, -1}, {-1, -1} };
+
+    //set the callback function for any mouse event
+    setMouseCallback("Board", CallBackFunc, point);
+
+    //show the image
+    imshow("Board", Images::img);
+
+    // Wait until user press some key
+    waitKey(0);
 
 #pragma endregion
 
