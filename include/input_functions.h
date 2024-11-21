@@ -29,6 +29,36 @@
 
 void InputFunc(std::vector<std::shared_ptr<Command>> steps, Position* p);
 
+#pragma region Go Function
+
+std::vector<Position> generateDirectWay(Position& src, Position& dest);
+
+std::vector<Position> generateWayOnRoads(Position& src, Position& dest);
+
+bool move(Position* src, Position& dest);
+
+bool goOnSquare(Position* src, Position& dest);
+
+bool goOnRoad(Position* src, Position& dest);
+
+bool go(Position* src, Position& dest);
+
+#pragma endregion
+
+///////
+void deposit_func(std::vector<std::string> args, int time, Position* src);
+
+void takeResources_func(std::vector<std::string>& args, int time, Position* src);
+//////
+
+void work_func(std::vector<std::string> args, Position* src);
+
+void move_func(std::vector<std::string> args, Position* src);
+
+void rain_func();
+
+void wait_func(std::vector<std::shared_ptr<Command>>& whatToDo, int time, Position* p);
+
 Square& select_func(std::vector<std::string>& pos, Position* p);
 
 #endif // __INPUT_FUNCTIONS__
