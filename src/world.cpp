@@ -37,6 +37,8 @@ void World::printBoard()
 
             if (Tile* t = dynamic_cast<Tile*>(p))
                 cout << t->tileType << "  ";
+            else if (Road* r = dynamic_cast<Road*>(p))
+                cout << "-  ";
             else
                 cout << "*  ";
         }

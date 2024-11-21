@@ -1,5 +1,13 @@
-#include <iostream>
+#include <memory>
+#include <algorithm>
 #include <vector>
+#include <iostream>
+#include <sstream>
+#include <unordered_map>
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 
 #include "../resources/code/Input.h"
 
@@ -26,6 +34,9 @@
 #include "input_functions.h"
 #include "asserts_functions.h"
 
+#include "mouse_events.h"
+
+using namespace cv;
 using namespace std;
 
 
